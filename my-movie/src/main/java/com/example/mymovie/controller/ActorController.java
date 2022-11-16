@@ -1,31 +1,33 @@
 package com.example.mymovie.controller;
 
 import com.example.mymovie.model.Actor;
+import com.example.mymovie.model.ActorAndFilms;
 import com.example.mymovie.model.Film;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Objects;
+import java.util.*;
 
 @RestController
 public class ActorController {
     //generate data with actors and films objects
-    public List data = generator();
-    public List<Actor> listOfActors = (List<Actor>) data.get(0);
-    public List<Film> listOfFilms = (List<Film>) data.get(1);
+    public ActorAndFilms data = generator();
 
-    @RequestMapping(value = "/getAllActors")
+
+    public List<Actor> listOfActors = data.getActors();
+    public List<Film> listOfFilms = data.getFilms();
+
+    @RequestMapping(value = "/getAllActors", method = RequestMethod.GET)
     public List<Actor> getAllActors(){
         return this.listOfActors;
     }
-    @RequestMapping(value = "/getAllFilms")
+    @RequestMapping(value = "/getAllFilms", method = RequestMethod.GET)
     public List<Film> getAllFilms(){
         return this.listOfFilms;
     }
 
-    static List generator(){
+    static ActorAndFilms generator(){
 
         Actor danielCraig = new Actor("Craig","daniel","06/09/2000");
 
@@ -57,10 +59,8 @@ public class ActorController {
         filmList.add(intouchable);
         filmList.add(jurrassicWorld);
 
-        ArrayList filmAndActors = new ArrayList<Objects>();
-        filmAndActors.add(actorsList);
-        filmAndActors.add(filmList);
 
-        return filmAndActors;
+        return new ActorAndFilms(actorsList,filmList);
+
     }
 }
