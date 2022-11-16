@@ -2,6 +2,7 @@ package com.example.mymovie.model;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,8 +71,12 @@ public class Actor {
         }
         return returningList;
     }
+    @ApiModelProperty(notes = "Name of the actor",name="name",required=true,value="Test name")
     public String name;
+    @ApiModelProperty(notes = "FirstName of the actor",name="firstName",required=true,value="Test firstname")
     public String firstNAme;
+    @ApiModelProperty(notes = "birth Date of the Actor",name="birthDate",required=true,value="Test birthDate")
     public String birthDate;
+    @ApiModelProperty(notes = "Film list of the actor",name="filmList",required=true,value="filmList")
     public List<Film> filmList;
 }

@@ -1,5 +1,7 @@
 package com.example.mymovie.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,8 +63,12 @@ public class Film {
         }
         return returningList;
     }*/
+    @ApiModelProperty(notes = "Title of the film",name="title",required=true,value="Test Title")
     public String title;
+    @ApiModelProperty(notes = "realisator of the film",name="real",required=true,value="Test real")
     public String real;
+    @ApiModelProperty(notes = "Actor of the film",name="mainActor",required=true,value="Test mainActor")
     public Actor mainActor;
+    @ApiModelProperty(notes = "Date of the film",name="date",required=true,value="Test date")
     public String date;
 }
