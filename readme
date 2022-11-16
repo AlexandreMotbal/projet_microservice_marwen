@@ -1,1 +1,17 @@
 projet Alexandre Motbal : microservices 
+--------------------ORIGINAL-------------------------|
+                                                     |
+http://localhost:8080                                |
+                                                     |
+-------------------MS1_SHOW_DATA---------------------|
+http://localhost:8080/getAllFilms                    |
+http://localhost:8080/getAllActors                   |
+http://localhost:8080/findActorByName/{actorByName}  |
+http://localhost:8080/findActorByFilm/{actorByFilm}  |
+http://localhost:8080/findFilmByTitle/{filmTitle}    |
+----------------ACTUATOR-----------------------------
+http://localhost:8080/actuator                       |
+http://localhost:8080/actuator/health                |
+                                                     |
+----------------SWAGGER2------------------------     |
+localhost:8080/my-movie/swagger-ui                   |
