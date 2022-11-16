@@ -9,7 +9,12 @@ public class Actor {
         this.birthDate = birthDate;
         this.filmList = filmList;
     }
-
+    public Actor(String name, String firstNAme, String birthDate) {
+        this.name = name;
+        this.firstNAme = firstNAme;
+        this.birthDate = birthDate;
+        this.filmList = null;
+    }
     public String getName() {
         return name;
     }
