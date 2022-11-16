@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.*;
 
 @RestController
-public class ActorController {
+public class FilmController {
     //generate data with actors and films objects
     public ActorAndFilms data = generator();
 
@@ -20,18 +20,15 @@ public class ActorController {
     public List<Actor> listOfActors = data.getActors();
     public List<Film> listOfFilms = data.getFilms();
 
-    @RequestMapping(value = "/getAllActors", method = RequestMethod.GET)
-    public List getAllActors() {
-        int sizeOfList = this.listOfActors.size();
-        List returningList = new ArrayList();
+    @RequestMapping(value = "/getAllFilms", method = RequestMethod.GET)
+    public List<String> getAllFilms(){
+        int sizeOfList = this.listOfFilms.size();
+        List<String> returningList = new ArrayList<>();
         for(int i = 0 ; i<sizeOfList;i++){
-            returningList.add(listOfActors.get(i).toString());
+            returningList.add(listOfFilms.get(i).toString());
         }
         return returningList;
-    }
-    @RequestMapping(value = "/getAllFilms", method = RequestMethod.GET)
-    public List<Film> getAllFilms(){
-        return this.listOfFilms;
+
     }
 
     static ActorAndFilms generator(){

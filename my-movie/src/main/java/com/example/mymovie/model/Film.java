@@ -1,5 +1,8 @@
 package com.example.mymovie.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Film {
     public Film(String title, String real, Actor mainActor, String date) {
         this.title = title;
@@ -40,6 +43,24 @@ public class Film {
         this.date = date;
     }
 
+    @Override
+    public String toString() {
+        return "Film{" +
+                "title='" + title + '\'' +
+                ", real='" + real + '\'' +
+                ", mainActor=" + mainActor.toString() +
+                ", date='" + date + '\'' +
+                '}';
+    }
+    /*
+    public List<String> stringifyMainActor(){
+        int sizeOfList = mainActor.size();
+        List<String> returningList = new ArrayList<>();
+        for(int i = 0 ; i<sizeOfList;i++) {
+            returningList.add(mainActor.get(i).getTitle());
+        }
+        return returningList;
+    }*/
     public String title;
     public String real;
     public Actor mainActor;
